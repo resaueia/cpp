@@ -7,6 +7,8 @@ class Animal {
 private:
 	std::string name;
 public:
+	Animal(std::string name);
+	~Animal();
 	void set_name(std::string new_name);
 	void talk();
 };

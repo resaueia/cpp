@@ -13,6 +13,7 @@ int main()
 	output << "Line 1: Hello, World!" << std::endl;
 	output << "Line 2: This is a test." << std::endl;
 	output << "Line 3: Writing to a file." << std::endl;
+	output << "Line 4: Hope it works!" << std::endl;
 	output << "Line 4: Goodbye!" << std::endl;
 	output.close();
 	std::cout << "File created and written successfully!" << std::endl;

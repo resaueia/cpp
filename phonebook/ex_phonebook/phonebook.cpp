@@ -72,6 +72,8 @@ void Phonebook::show_table()
 		// std::cout << "No contacts to display.\n";
 		return ;
 	}
+	std::cout << std::setw(10) << "*~*~*~*~*~*~*~*~* Phonebook *~*~*~*~*~*~*~*~*"
+				<< std::endl;
 	std::cout << std::setw(10) << "Index"
 				<< "|";
 	std::cout << std::setw(10) << "First Name"
@@ -89,6 +91,8 @@ void Phonebook::show_table()
 		std::cout << std::setw(10) << format(contacts[i].get_last_name()) << "|";
 		std::cout << std::setw(10) << format(contacts[i].get_nickname()) << "|" << std::endl;
 	}
+	std::cout << std::setw(10) << "*~*~*~*~*~*~*~*~**~*~*~*~*~*~*~*~**~*~*~*~*~*"
+				<< std::endl;
 }
 
 void Phonebook::show_contact()

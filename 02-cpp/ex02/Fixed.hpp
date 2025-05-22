@@ -6,7 +6,7 @@
 /*   By: rsaueia <rsaueia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 15:32:43 by rsaueia           #+#    #+#             */
-/*   Updated: 2025/05/22 16:49:29 by rsaueia          ###   ########.fr       */
+/*   Updated: 2025/05/22 18:19:00 by rsaueia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,28 @@ class Fixed
 	
 	// 18) Division operator /
 	Fixed operator/(Fixed const& other) const;
+
+	// 19) Pre-increment operator ++a
+	Fixed& operator++();
+
+	// 20) Post-increment operator a++
+	Fixed operator++(int);
+
+	// 21) Pre-decrement operator --a
+	Fixed& operator--();
+
+	// 22) Post-decrement operator a--
+	Fixed operator--(int);
+
+	/* Min and Max */
+
+	// Static min overloads (why static? because static does not require an instance of the class to be called)
+	static Fixed& min(Fixed& a, Fixed& b);
+	static const Fixed& min(const Fixed& a, const Fixed& b);
+
+	// Static max overloads
+	static Fixed& max(Fixed& a, Fixed& b);
+	static const Fixed& max(const Fixed& a, const Fixed& b);	
 };
 
 //    Overload of operator<<

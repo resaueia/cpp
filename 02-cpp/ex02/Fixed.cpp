@@ -6,7 +6,7 @@
 /*   By: rsaueia <rsaueia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 15:36:05 by rsaueia           #+#    #+#             */
-/*   Updated: 2025/05/22 16:59:13 by rsaueia          ###   ########.fr       */
+/*   Updated: 2025/05/22 18:21:16 by rsaueia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,6 +158,72 @@ Fixed Fixed::operator/(Fixed const &other) const
     long long temp = (static_cast<long long>(rawBits_) << fracBits_) / other.rawBits_;
     result.rawBits_ = static_cast<int>(temp);
 	return (result);
+}
+
+/* INCREMENT AND DECREMENT */
+
+// 19) Pre-increment operator ++
+// Increments the fixed-point value by 1 and returns the updated object.
+Fixed &Fixed::operator++()
+{
+	++rawBits_; // increment rawBits_ directly
+	return (*this);
+}
+
+// 20) Post-increment operator ++ (postfix)
+// Increments the fixed-point value by 1 and returns a copy of the original.
+Fixed Fixed::operator++(int)
+{
+	Fixed temp(*this); // make a copy of the current object
+	++rawBits_; // increment rawBits_ directly
+	return (temp); // return the copy
+}
+
+// 21) Pre-decrement operator --
+// Decrements the fixed-point value by 1 and returns the updated object.
+Fixed &Fixed::operator--()
+{
+	--rawBits_; // decrement rawBits_ directly
+	return (*this);
+}
+
+// 22) Post-decrement operator -- (postfix)
+// Decrements the fixed-point value by 1 and returns a copy of the original.
+Fixed Fixed::operator--(int)
+{
+	Fixed temp(*this); // make a copy of the current object
+	--rawBits_; // decrement rawBits_ directly
+	return (temp); // return the copy
+}
+
+/* MIN AND MAX */
+
+// Static min (non-const)
+// Returns the smaller of two Fixed objects.
+Fixed &Fixed::min(Fixed &a, Fixed &b)
+{
+	return (a < b) ? a : b;
+}
+
+// Static min (const)
+// Returns the smaller of two const Fixed objects.
+const Fixed &Fixed::min(const Fixed &a, const Fixed &b)
+{
+	return (a < b) ? a : b;
+}
+
+// Static max (non-const)
+// Returns the larger of two Fixed objects.
+Fixed &Fixed::max(Fixed &a, Fixed &b)
+{
+	return (a > b) ? a : b;
+}
+
+// Static max (const)
+// Returns the larger of two const Fixed objects.
+const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
+{
+	return (a > b) ? a : b;
 }
 
 // Overload of operator<<

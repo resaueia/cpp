@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsaueia- <rsaueia-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rsaueia <rsaueia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 17:06:09 by rsaueia-          #+#    #+#             */
-/*   Updated: 2025/06/03 17:14:40 by rsaueia-         ###   ########.fr       */
+/*   Updated: 2025/06/04 16:19:22 by rsaueia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ class FragTrap : public ClapTrap
         ~FragTrap(); // destructor
         
         void attack(const std::string& target); // override the base method
-        void highFivesGuys(); // FragTrap specific method
+        void highFivesGuys(void); // FragTrap specific method
+
+        int getEnergyPoints();
 };
 
 #endif

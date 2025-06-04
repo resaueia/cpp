@@ -6,7 +6,7 @@
 /*   By: rsaueia <rsaueia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 17:50:25 by rsaueia           #+#    #+#             */
-/*   Updated: 2025/06/04 18:25:50 by rsaueia          ###   ########.fr       */
+/*   Updated: 2025/06/04 19:53:49 by rsaueia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,31 @@ int main()
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	std::cout << "------------------------" << std::endl;
+	
 	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
+
+	std::cout << "------------------------" << std::endl;
+
+	const Animal* another = j;
+	another->makeSound(); // This will call Dog's makeSound() because i now points to a Dog object
 
 	delete i;
 	delete j;
 	delete meta;
 	return (0);
 }
+/*
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
+
+int main() {
+	const WrongAnimal* wrong = new WrongCat();
+
+	std::cout << wrong->getType() << std::endl;
+	wrong->makeSound(); // Vai chamar o método da WrongAnimal
+
+	delete wrong;
+	return 0;
+}*/

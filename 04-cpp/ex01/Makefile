@@ -6,11 +6,11 @@
 #    By: rsaueia <rsaueia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/09 17:17:02 by rsaueia           #+#    #+#              #
-#    Updated: 2025/06/09 17:17:16 by rsaueia          ###   ########.fr        #
+#    Updated: 2025/06/12 16:17:37 by rsaueia          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = animals
+NAME = paw-prints
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98

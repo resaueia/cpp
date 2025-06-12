@@ -6,7 +6,7 @@
 /*   By: rsaueia <rsaueia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 17:50:25 by rsaueia           #+#    #+#             */
-/*   Updated: 2025/06/04 19:53:49 by rsaueia          ###   ########.fr       */
+/*   Updated: 2025/06/09 16:35:04 by rsaueia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ int main()
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
+	const Animal* k = i;
 
 	std::cout << "------------------------" << std::endl;
-	std::cout << meta->getType() << " " << std::endl;
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
+	std::cout << meta->getType() << std::endl;
+	std::cout << j->getType() << std::endl;
+	std::cout << i->getType() << std::endl;
+	std::cout << k->getType() << std::endl; // This will also print "Cat" since k points to a Cat object
 	std::cout << "------------------------" << std::endl;
 	
 	i->makeSound();

@@ -6,7 +6,7 @@
 /*   By: rsaueia <rsaueia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 17:00:53 by rsaueia           #+#    #+#             */
-/*   Updated: 2025/06/09 17:15:33 by rsaueia          ###   ########.fr       */
+/*   Updated: 2025/06/12 16:45:45 by rsaueia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,30 @@ int main() {
 	const int N = 4;
 	Animal* animals[N];
 
-	std::cout << "\n=== Creating animals ===" << std::endl;
-	for (int i = 0; i < N; ++i) {
+	std::cout << "\n=== Creating our fur friends ===" << std::endl;
+	for (int i = 0; i < N; i++) {
 		if (i < N / 2)
 			animals[i] = new Dog();
 		else
 			animals[i] = new Cat();
 	}
 
-	std::cout << "\n=== Making animals make sound ===" << std::endl;
+	std::cout << "\n=== Time to hear them talk - in their own way! ===" << std::endl;
 	for (int i = 0; i < N; ++i)
 		animals[i]->makeSound();
 
-	std::cout << "\n=== Deleting animals ===" << std::endl;
+	std::cout << "\n=== Let's give 'em some mischievous ideas! ===" << std::endl;
+	animals[0]->getBrain()->setIdea(0, "Bark at the mailman");
+	animals[1]->getBrain()->setIdea(0, "Try to annoy the cat");
+	animals[2]->getBrain()->setIdea(0, "Make some biscuits");
+	animals[3]->getBrain()->setIdea(0, "Sleep on the keyboard");
+
+	std::cout << "\n=== Let's see what's on their minds ===" << std::endl;
+	for (int i = 0; i < N; ++i) {
+		std::cout << animals[i]->getType() << " " << i + 1 << " idea: " << animals[i]->getBrain()->getIdea(0) << std::endl;
+	}
+
+	std::cout << "\n=== Saying goodbye to our fur friends ===" << std::endl;
 	for (int i = 0; i < N; ++i)
 		delete animals[i];
 

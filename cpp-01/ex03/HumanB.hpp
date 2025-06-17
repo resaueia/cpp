@@ -7,7 +7,7 @@
 class HumanB{
 	private:
 		std::string name;
-		Weapon *weapon;
+		Weapon *weapon; // Pointer to Weapon, so it can be set later
 	public:
 		HumanB(std::string name);
 		void setWeapon(Weapon &weapon);

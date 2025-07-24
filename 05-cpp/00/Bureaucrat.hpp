@@ -6,7 +6,7 @@
 /*   By: rsaueia- <rsaueia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 16:46:25 by rsaueia-          #+#    #+#             */
-/*   Updated: 2025/07/23 16:52:34 by rsaueia-         ###   ########.fr       */
+/*   Updated: 2025/07/24 16:10:14 by rsaueia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <stdio.h>
 #include <string>
+#include <stdexcept>
 
 class Bureaucrat
 {
@@ -26,8 +27,19 @@ class Bureaucrat
         Bureaucrat& operator=(const Bureaucrat &other);
         ~Bureaucrat();
 
-        std::string& getName();
-        std::string& getGrade();
-    
-    
+        const std::string& getName() const;
+        int getGrade();
+
+        void incrementGrade();
+        void decrementGrade();
+
+        class GradeTooHighException : public std::exception {
+            public:
+                const char* what() const throw() { return "Error. Grade detected is too high! :-(";}
+        };
+
+        class GradeTooLowException : public std::exception {
+            public:
+                const char* what() const throw() { return "Error. Grade detected is too low! :-(";}
+        };
 };

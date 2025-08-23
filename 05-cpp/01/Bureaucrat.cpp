@@ -6,11 +6,12 @@
 /*   By: rsaueia- <rsaueia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 16:45:29 by rsaueia-          #+#    #+#             */
-/*   Updated: 2025/08/23 16:38:43 by rsaueia-         ###   ########.fr       */
+/*   Updated: 2025/08/23 19:20:21 by rsaueia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : name(name), grade(grade) {
     if (grade < 1)
@@ -76,4 +77,14 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& b)
 {
     os << b.getName() << ", bureaucrat grade " << b.getGrade() << ".";
     return os;
+}
+
+void Bureaucrat::signForm(Form& form) {
+    try {
+        form.beSigned(*this); // Tenta assinar
+        std::cout << this->name << " signed " << form.getName() << std::endl;
+    } catch (std::exception& e) {
+        std::cout << this->name << " couldn't sign " << form.getName()
+                  << " because " << e.what() << std::endl;
+    }
 }

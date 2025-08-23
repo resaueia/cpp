@@ -6,7 +6,7 @@
 /*   By: rsaueia- <rsaueia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 16:46:25 by rsaueia-          #+#    #+#             */
-/*   Updated: 2025/08/23 19:12:05 by rsaueia-         ###   ########.fr       */
+/*   Updated: 2025/08/23 19:19:13 by rsaueia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ class Bureaucrat
             public:
                 const char* what() const throw();
         };
+
+        void signForm(Form& form);
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);

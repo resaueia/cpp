@@ -6,7 +6,7 @@
 /*   By: rsaueia- <rsaueia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 16:46:25 by rsaueia-          #+#    #+#             */
-/*   Updated: 2025/08/23 16:46:31 by rsaueia-         ###   ########.fr       */
+/*   Updated: 2025/08/23 19:12:05 by rsaueia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <string>
 #include <stdexcept>
 #include <iostream>
+
+class Form;
 
 class Bureaucrat
 {

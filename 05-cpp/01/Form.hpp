@@ -6,7 +6,7 @@
 /*   By: rsaueia- <rsaueia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 17:16:19 by rsaueia-          #+#    #+#             */
-/*   Updated: 2025/08/23 17:32:52 by rsaueia-         ###   ########.fr       */
+/*   Updated: 2025/09/20 15:45:13 by rsaueia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class Form
         bool getIsSigned() const;
         int getGradeToSign() const;
         int getGradeToExecute() const;
+        const std::string& getName() const;
 
     
         void beSigned(const Bureaucrat& bureaucrat);

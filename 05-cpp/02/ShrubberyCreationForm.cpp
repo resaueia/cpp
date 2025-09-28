@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsaueia- <rsaueia-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rsaueia <rsaueia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 17:59:33 by rsaueia-          #+#    #+#             */
-/*   Updated: 2025/09/20 18:03:09 by rsaueia-         ###   ########.fr       */
+/*   Updated: 2025/09/28 14:46:39 by rsaueia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
+#include "Bureaucrat.hpp"
 #include <fstream>
 #include <iostream>
 
@@ -51,13 +52,16 @@ void ShrubberyCreationForm::execute(const Bureaucrat& executor) const {
 
     // 4. Escreve arte ASCII no arquivo
     outFile <<
-        "       🌳\n"
-        "      🌲🌲\n"
-        "     🌳🌳🌳\n"
-        "    🌲🌲🌲🌲\n"
-        "   🌳🌳🌳🌳🌳\n"
-        "      |||\n"
-        "      |||\n";
+"               ,@@@@@@@,\n"
+"       ,,,.   ,@@@@@@/@@,  .oo8888o.\n"
+"    ,&%%&%&&%,@@@@@/@@@@@@,8888\\88/8o\n"
+"   ,%&\\%&&%&&%,@@@\\@@@/@@@88\\88888/88'\n"
+"   %&&%&%&/%&&%@@\\@@/ /@@@88888\\88888'\n"
+"   %&&%/ %&%%&&@@\\ V /@@' `88\\8 `/88'\n"
+"   `&%\\ ` /%&'    |.|        \\ '|8'\n"
+"       |o|        | |         | |\n"
+"       |.|        | |         | |\n"
+"    \\\\/ ._\\//_/__/  ,\\_//__\\\\/.  \\_//__/_\n";
 
     outFile.close();
 }

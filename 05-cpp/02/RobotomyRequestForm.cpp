@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsaueia- <rsaueia-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rsaueia <rsaueia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 18:14:59 by rsaueia-          #+#    #+#             */
-/*   Updated: 2025/09/20 18:15:42 by rsaueia-         ###   ########.fr       */
+/*   Updated: 2025/09/28 14:31:18 by rsaueia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
+#include "Bureaucrat.hpp"
 #include <cstdlib>    // rand, srand
 #include <ctime>      // time (para seed do rand)
 #include <iostream>   

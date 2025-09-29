@@ -6,7 +6,7 @@
 /*   By: rsaueia- <rsaueia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 16:46:25 by rsaueia-          #+#    #+#             */
-/*   Updated: 2025/08/23 19:19:13 by rsaueia-         ###   ########.fr       */
+/*   Updated: 2025/09/29 17:17:14 by rsaueia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 #include <stdexcept>
 #include <iostream>
 
-class Form;
+class Form; // here, i can get away with using merely a forward declaation since 
+            // i'm not actinvely using anything from the form class (i.e. its methods)
 
 class Bureaucrat
 {

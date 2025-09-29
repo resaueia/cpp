@@ -6,7 +6,7 @@
 /*   By: rsaueia- <rsaueia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 17:44:04 by rsaueia-          #+#    #+#             */
-/*   Updated: 2025/09/20 15:45:04 by rsaueia-         ###   ########.fr       */
+/*   Updated: 2025/09/20 18:52:39 by rsaueia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,6 @@ int Form::getGradeToSign() const {
 int Form::getGradeToExecute() const {
     return this->gradeToExecute;
 }
-
-
-
-/*MBs*/
 
 const char* Form::GradeTooHighException::what() const throw() {
     return "Form: Grade too high!";

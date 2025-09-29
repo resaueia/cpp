@@ -6,7 +6,7 @@
 /*   By: rsaueia- <rsaueia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 17:16:19 by rsaueia-          #+#    #+#             */
-/*   Updated: 2025/09/20 15:45:13 by rsaueia-         ###   ########.fr       */
+/*   Updated: 2025/09/29 17:19:03 by rsaueia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ class Form
         public:
             const char* what() const throw();
         };
-
-    friend std::ostream& operator<<(std::ostream& os, const Form& form);
 };
+
+std::ostream& operator<<(std::ostream& os, const Form& form);

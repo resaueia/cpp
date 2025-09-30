@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsaueia <rsaueia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rsaueia- <rsaueia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 18:14:59 by rsaueia-          #+#    #+#             */
-/*   Updated: 2025/09/28 14:31:18 by rsaueia          ###   ########.fr       */
+/*   Updated: 2025/09/30 16:59:54 by rsaueia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,9 @@ void RobotomyRequestForm::execute(const Bureaucrat& executor) const {
     if (executor.getGrade() > this->getGradeToExecute())
         throw AForm::GradeTooLowException();
 
-    // Sons de perfuração
     std::cout << "* DRRRRRR DRRRRRRRRR *" << std::endl;
 
-    // Semente para aleatoriedade (opcional, mas boa prática)
+    // Seed pra aleatoriedade (é optional mas lembrar q sem isso nao se tem aleatoriedade per se)
     std::srand(std::time(NULL));
 
     // Sorteia 0 ou 1

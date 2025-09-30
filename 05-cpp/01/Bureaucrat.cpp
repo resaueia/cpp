@@ -6,7 +6,7 @@
 /*   By: rsaueia- <rsaueia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 16:45:29 by rsaueia-          #+#    #+#             */
-/*   Updated: 2025/08/23 19:20:21 by rsaueia-         ###   ########.fr       */
+/*   Updated: 2025/09/30 16:54:36 by rsaueia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ const char* Bureaucrat::GradeTooHighException::what() const throw()
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-    return ":( Grade is too low!)";
+    return ":( Grade is too low!";
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b)

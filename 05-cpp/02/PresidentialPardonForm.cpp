@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsaueia <rsaueia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rsaueia- <rsaueia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 14:13:29 by rsaueia           #+#    #+#             */
-/*   Updated: 2025/09/28 14:16:40 by rsaueia          ###   ########.fr       */
+/*   Updated: 2025/09/30 17:01:33 by rsaueia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,6 @@ void PresidentialPardonForm::execute(const Bureaucrat& executor) const {
         throw AForm::GradeTooLowException();
 
     // Ação principal do formulário
-    std::cout << target << " was pardoned by Zaphod Beeblebrox." << std::endl;
+    std::cout << target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }
 

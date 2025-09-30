@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsaueia <rsaueia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rsaueia- <rsaueia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 15:08:16 by rsaueia           #+#    #+#             */
-/*   Updated: 2025/09/28 15:09:30 by rsaueia          ###   ########.fr       */
+/*   Updated: 2025/09/30 17:13:08 by rsaueia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Intern& Intern::operator=(const Intern& other) { (void)other; return *this; }
 
 Intern::~Intern() {}
 
-// Funções auxiliares para criação
+// fts auxiliares para criação
 static AForm* createShrubbery(const std::string& target) {
     return new ShrubberyCreationForm(target);
 }

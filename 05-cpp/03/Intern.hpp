@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsaueia <rsaueia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rsaueia- <rsaueia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 15:07:16 by rsaueia           #+#    #+#             */
-/*   Updated: 2025/09/28 15:07:33 by rsaueia          ###   ########.fr       */
+/*   Updated: 2025/09/30 17:10:34 by rsaueia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ public:
     Intern& operator=(const Intern& other);
     ~Intern();
 
-    // Método principal: cria um formulário com base no nome passado
+    // the intern's single job lol: cria um formulário com base no nome passado
     AForm* makeForm(const std::string& formName, const std::string& target) const;
 };

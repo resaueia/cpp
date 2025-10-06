@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rsaueia <rsaueia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/05 17:14:45 by rsaueia           #+#    #+#             */
-/*   Updated: 2025/10/06 16:37:09 by rsaueia          ###   ########.fr       */
+/*   Created: 2025/10/06 16:15:15 by rsaueia           #+#    #+#             */
+/*   Updated: 2025/10/06 16:15:23 by rsaueia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# pragma once
+#include "ScalarConverter.hpp"
 
-#include <iostream>
-#include <string>
-#include <cstdlib>
-#include <cctype>
-#include <iomanip>
-#include <cmath>
-#include <limits>
+int main(int argc, char** argv)
+{
+    if (argc != 2)
+    {
+        std::cout << "Usage: ./convert <literal>" << std::endl;
+        return 1;
+    }
 
-enum Literal_Type {
-	CHAR,
-	INT,
-	FLOAT,
-	DOUBLE,
-	UNKNOWN
-};
-
-class ScalarConverter {
-	private:
-		static Literal_Type get_type(const std::string& literal);
-	public:
-		static void convert(const std::string& literal);
-};
+    ScalarConverter::convert(argv[1]);
+    return 0;
+}

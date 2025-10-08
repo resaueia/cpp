@@ -6,7 +6,7 @@
 /*   By: rsaueia <rsaueia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:54:45 by rsaueia           #+#    #+#             */
-/*   Updated: 2025/10/08 18:59:25 by rsaueia          ###   ########.fr       */
+/*   Updated: 2025/10/08 19:02:18 by rsaueia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void ScalarConverter::convert(const std::string& literal)
     }
 
 
-    // ---------- CHAR ----------
+    //char
     std::cout << "char: ";
     if (std::isnan(value) || std::isinf(value))
         std::cout << "impossible" << std::endl;
@@ -114,7 +114,7 @@ void ScalarConverter::convert(const std::string& literal)
     else
         std::cout << "'" << static_cast<char>(value) << "'" << std::endl;
 
-    // ---------- INT ----------
+    //int
     std::cout << "int: ";
     if (std::isnan(value) || std::isinf(value))
         std::cout << "impossible" << std::endl;
@@ -124,7 +124,7 @@ void ScalarConverter::convert(const std::string& literal)
     else
         std::cout << static_cast<int>(value) << std::endl;
 
-    // ---------- FLOAT ----------
+    //float
     std::cout << "float: ";
     if (std::isnan(value))
         std::cout << "nanf" << std::endl;
@@ -137,7 +137,7 @@ void ScalarConverter::convert(const std::string& literal)
         std::cout << f << "f" << std::endl;
     }
 
-    // ---------- DOUBLE ----------
+    //double
     std::cout << "double: ";
     if (std::isnan(value))
         std::cout << "nan" << std::endl;

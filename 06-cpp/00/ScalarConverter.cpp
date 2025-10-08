@@ -6,11 +6,12 @@
 /*   By: rsaueia <rsaueia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:54:45 by rsaueia           #+#    #+#             */
-/*   Updated: 2025/10/06 16:43:05 by rsaueia          ###   ########.fr       */
+/*   Updated: 2025/10/08 18:59:25 by rsaueia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+
 
 //ScalarConverter::ScalarConverter() {}
 
@@ -32,17 +33,21 @@ Literal_Type ScalarConverter::get_type(const std::string& literal)
 	//we have to check if its an integer
 
 	bool isInt = true;
-	int i = 0;
+    size_t i = 0;
 
 	if (literal[i] == '+' || literal[i] == '-')
 		i++;
 
-	for (; i < literal.length(); ++i)
+    if (i >= literal.length()) // check if there's at least one digit
+        return UNKNOWN;
+
+    while (i < literal.length())
 	{
 		if (!isdigit(literal[i])) {
 			isInt = false;
 			break;
 		}
+        i++;
 	}
 	if (isInt)
 		return INT;
@@ -51,7 +56,7 @@ Literal_Type ScalarConverter::get_type(const std::string& literal)
 
 	bool isFloat = false;
 
-    if (literal.find('.') != std::string::npos && literal.back() == 'f')
+    if (literal.find('.') != std::string::npos && literal[literal.length() - 1] == 'f')
 		isFloat = true;
 
 	if (isFloat)
@@ -61,7 +66,7 @@ Literal_Type ScalarConverter::get_type(const std::string& literal)
 
 	bool isDouble = false;
 
-	if (literal.find('.') != std::string::npos && literal.back() != 'f')
+	if (literal.find('.') != std::string::npos && literal[literal.length() - 1] != 'f')
 		isDouble = true;
 
 	if (isDouble)

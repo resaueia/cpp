@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rsaueia <rsaueia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 16:29:55 by rsaueia           #+#    #+#             */
-/*   Updated: 2025/10/13 18:12:41 by rsaueia          ###   ########.fr       */
+/*   Created: 2025/10/13 18:16:05 by rsaueia           #+#    #+#             */
+/*   Updated: 2025/10/13 18:20:31 by rsaueia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # pragma once
+
 #include <iostream>
 
 template <typename T>
-void swap(T &value, T &value2) {
-	T temp = value;
-	value = value2;
-	value2 = temp;
+void iter(T *array, size_t length, void (*func)(T const &)) {
+	if (!array || length == 0 || !func)
+		return;
+	for (size_t i = 0; i < length; i++)
+		func(array[i]); // apply the function to each element of the array
 }
-
-template <typename T>
-T min(T const &a, T const &b) {
-	return (a < b ? a : b);
-}
-
-template <typename T>
-T max(T const &a, T const &b) {
-	return (a > b ? a : b);
-}
-
-/*
-the comparison operator uses the lexicographical order for strings
-which is basically a comparison based on the ASCII values of the characters.
-*/

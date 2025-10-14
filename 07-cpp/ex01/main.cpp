@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsaueia <rsaueia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rsaueia- <rsaueia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 18:19:30 by rsaueia           #+#    #+#             */
-/*   Updated: 2025/10/13 18:19:32 by rsaueia          ###   ########.fr       */
+/*   Updated: 2025/10/14 17:23:03 by rsaueia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void printElement(T const &x) {
 // Example of a transformation function
 void toUpper(std::string const &s) {
     std::string copy = s;
-    for (size_t i = 0; i < copy.size(); i++)
+    for (_size_t i = 0; i < copy._size(); i++)
         copy[i] = std::toupper(copy[i]);
     std::cout << copy << " ";
 }

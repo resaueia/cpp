@@ -1,50 +1,54 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rsaueia- <rsaueia-@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 17:20:51 by rsaueia-          #+#    #+#             */
-/*   Updated: 2025/10/14 17:28:58 by rsaueia-         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
+#include <iostream>
 #include "Array.hpp"
-#include <string>
+#include <cstdlib>
 
-int main() {
-    try {
-        Array<int> numbers(5);
-        for (unsigned int i = 0; i < numbers.size(); i++)
-            numbers[i] = i * 2;
-
-        std::cout << "Integer array: ";
-        for (unsigned int i = 0; i < numbers.size(); i++)
-            std::cout << numbers[i] << " ";
-        std::cout << std::endl;
-
-        Array<std::string> words(3);
-        words[0] = "Hello";
-        words[1] = "C++";
-        words[2] = "Templates";
-
-        std::cout << "String array: ";
-        for (unsigned int i = 0; i < words.size(); i++)
-            std::cout << words[i] << " ";
-        std::cout << std::endl;
-
-        // Deep copy test
-        Array<std::string> copy = words;
-        copy[1] = "World";
-
-        std::cout << "Original: " << words[1] << " | Copy: " << copy[1] << std::endl;
-
-        // Exception test
-        std::cout << numbers[10] << std::endl; // invalid access
-
-    } catch (std::exception& e) {
-        std::cerr << "Exception: " << e.what() << std::endl;
+#define MAX_VAL 750
+int main(int, char**)
+{
+    Array<int> numbers(MAX_VAL);
+    int* mirror = new int[MAX_VAL];
+    srand(time(NULL));
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        const int value = rand();
+        numbers[i] = value;
+        mirror[i] = value;
     }
+    //SCOPE
+    {
+        Array<int> tmp = numbers;
+        Array<int> test(tmp);
+    }
+
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        if (mirror[i] != numbers[i])
+        {
+            std::cerr << "didn't save the same value!!" << std::endl;
+            return 1;
+        }
+    }
+    try
+    {
+        numbers[-2] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+        numbers[MAX_VAL] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        numbers[i] = rand();
+    }
+    delete [] mirror;//
     return 0;
 }

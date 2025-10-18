@@ -5,29 +5,24 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rsaueia <rsaueia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/10/14 17:21:08 by rsaueia-          #+#    #+#              #
-#    Updated: 2025/10/18 16:02:42 by rsaueia          ###   ########.fr        #
+#    Created: 2025/10/18 17:41:38 by rsaueia           #+#    #+#              #
+#    Updated: 2025/10/18 17:41:44 by rsaueia          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = array
+NAME = easyfind
+
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp
+HEADER = easyfind.hpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
-
-#  use main2.cpp
-test: main2.o
-	$(CXX) $(CXXFLAGS) -o $(NAME)_test main2.o
-
-main2.o: main2.cpp Array.hpp
-	$(CXX) $(CXXFLAGS) -c main2.cpp -o main2.o
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 clean:
 	rm -f $(OBJ)
@@ -36,3 +31,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

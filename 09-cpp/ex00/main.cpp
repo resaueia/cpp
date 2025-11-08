@@ -30,16 +30,13 @@ int main(int argc, char** argv) {
     }
 
     // 1) Load DB (CSV shipped with subject)
-    //    The subject says a CSV of historical bitcoin prices is provided.
-    //    We'll assume it's named "data.csv" and placed next to the executable.
-    //    (If your repo uses a different path, adjust here.)
+    //    theres a CSV of historical bitcoin prices provided.
     BitcoinExchange bex("data.csv");
 
     std::string line;
     // Optionally skip header lines starting with "date"
     if (std::getline(fin, line)) {
-        if (line.size() < 4 || line.substr(0,4) != "date")
-            ; // first line is real data, process it after by handling below
+        if (line.size() < 4 || line.substr(0,4) != "date"); // first line is real data, process it after by handling below
         else
             line.clear(); // header consumed
     }
@@ -64,3 +61,17 @@ int main(int argc, char** argv) {
 
     return 0;
 }
+
+/*
+Nesse exercício o que precisei fazer foi ler um histórico de preços do Bitcoin (data.csv) e, 
+com base nele, calcular o valor de entradas fornecidas pelo usuário (input.txt) no formato YYYY-MM-DD | value.
+Pra isso, criei a classe BitcoinExchange, que usa um std::map<std::string, double> — o map foi escolhido 
+porque mantém as datas ordenadas automaticamente e permite buscar facilmente a data exata ou a anterior com 
+o método lower_bound() - e tb pq o azzevedo ja tinha me dado o insight.
+A classe tem os principais métodos: loadCsv() → lê o arquivo data.csv e preenche o map com data → cotação.
+isValidDate() e parseValue() → validam formato da data e valor numérico.
+rateForDateOrPrev() → busca a taxa da data exata ou, se não existir, da data imediatamente anterior.
+processLine() → recebe uma linha do arquivo de entrada, valida, busca a cotação e retorna a frase formatada com o cálculo.
+pra usar, o input é ./btc input.txt, e o programa responde com algo como
+2011-01-03 => 3 = 0.9, calculando automaticamente com base no histórico.
+*/

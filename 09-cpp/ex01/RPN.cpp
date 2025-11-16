@@ -6,7 +6,7 @@
 /*   By: rsaueia <rsaueia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 14:41:44 by rsaueia           #+#    #+#             */
-/*   Updated: 2025/11/16 14:41:47 by rsaueia          ###   ########.fr       */
+/*   Updated: 2025/11/16 14:55:47 by rsaueia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,34 +42,46 @@ int RPN::applyOperator(char op, int a, int b) const {
 }
 
 int RPN::evaluate(const std::string& expr) {
+    // Reset stack in case evaluate() gets called multiple times 
+    while (!_stack.empty())
+        _stack.pop();
+
     std::istringstream iss(expr);
     std::string token;
 
     while (iss >> token) {
-        // Single character token?
-        if (token.size() == 1 && isOperator(token[0])) {
-            if (_stack.size() < 2)
-                throw std::runtime_error("Error: not enough operands");
 
-            int b = _stack.top(); _stack.pop();
-            int a = _stack.top(); _stack.pop();
-            int res = applyOperator(token[0], a, b);
-            _stack.push(res);
-        }
-        else {
-            // Expecting integer (can be multiple digits)
-            for (size_t i = 0; i < token.size(); ++i)
-                if (!std::isdigit(token[i]))
-                    throw std::runtime_error("Error: invalid token");
+        // Case 1: token is exactly one character
+        if (token.size() == 1) {
+            char c = token[0];
 
-            int value;
-            std::istringstream(token) >> value;
-            _stack.push(value);
+            // If it's an operator => apply it
+            if (isOperator(c)) {
+                if (_stack.size() < 2)
+                    throw std::runtime_error("Error");
+                
+                int b = _stack.top(); _stack.pop();
+                int a = _stack.top(); _stack.pop();
+                _stack.push(applyOperator(c, a, b));
+                continue;
+            }
+
+            // If it's a single-digit number => push it
+            if (std::isdigit(c)) {
+                _stack.push(c - '0'); 
+                continue;
+            }
+
+            // Single character, but not digit nor operator => invalid
+            throw std::runtime_error("Error");
         }
+
+        // Case 2: token has more than one character => invalid in this subject
+        throw std::runtime_error("Error");
     }
 
     if (_stack.size() != 1)
-        throw std::runtime_error("Error: invalid expression");
+        throw std::runtime_error("Error");
 
     return _stack.top();
 }

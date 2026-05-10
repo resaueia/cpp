@@ -3,25 +3,27 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rsaueia- <rsaueia-@student.42.fr>          +#+  +:+       +#+         #
+#    By: rsaueia <rsaueia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/08/23 16:15:00 by rsaueia-          #+#    #+#              #
-#    Updated: 2025/08/23 16:33:23 by rsaueia-         ###   ########.fr        #
+#    Created: 2025/11/17 10:00:00 by rsaueia           #+#    #+#              #
+#    Updated: 2025/11/17 10:00:00 by rsaueia          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = bureaucrat
+CXX      := c++
+CXXFLAGS := -Wall -Wextra -Werror -std=c++98
+NAME     := PmergeMe
 
-CXX = g++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-
-SRCS = main.cpp Bureaucrat.cpp
-OBJS = $(SRCS:.cpp=.o)
+SRCS := main.cpp PmergeMe.cpp
+OBJS := $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
@@ -30,3 +32,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

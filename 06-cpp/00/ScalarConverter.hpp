@@ -30,6 +30,11 @@ enum Literal_Type {
 
 class ScalarConverter {
 	private:
+		ScalarConverter();
+		ScalarConverter(const ScalarConverter&);
+		ScalarConverter& operator=(const ScalarConverter&);
+		~ScalarConverter();
+
 		static Literal_Type get_type(const std::string& literal);
 	public:
 		static void convert(const std::string& literal);

@@ -20,14 +20,14 @@ Serializer::~Serializer() {}
 // here we use reinterpret_cast to convert the pointer to an integer (unsignbed)
 // reinterpret_cast yields a value that has a different type, but the same bit pattern as the original value
 
-unsigned long Serializer::serialize(Data* ptr) {
-	return reinterpret_cast<unsigned long>(ptr);
+uintptr_t Serializer::serialize(Data* ptr) {
+	return reinterpret_cast<uintptr_t>(ptr);
 }
 
 
 // here we use reinterpret_cast to convert the integer back to a pointer
 
-Data* Serializer::deserialize(unsigned long raw) {
+Data* Serializer::deserialize(uintptr_t raw) {
 	return reinterpret_cast<Data*>(raw);
 }
 

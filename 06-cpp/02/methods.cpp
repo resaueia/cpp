@@ -13,9 +13,10 @@
 #include "A.hpp"
 #include "B.hpp"
 #include "C.hpp"
-#include <cstdlib> //for the rabndom function
-#include <ctime> //for the time function
+#include <cstdlib>
+#include <ctime>
 #include <iostream>
+#include <typeinfo>
 
 Base* generate(void)
 {
